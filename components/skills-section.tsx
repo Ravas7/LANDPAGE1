@@ -2,33 +2,29 @@ import { cn } from "@/lib/utils"
 
 const skillCategories = [
   {
-    title: "Frontend",
+    title: "Web Frontend",
     skills: [
-      { name: "React", level: 95 },
-      { name: "Next.js", level: 90 },
-      { name: "TypeScript", level: 88 },
-      { name: "Tailwind CSS", level: 92 },
-      { name: "JavaScript", level: 95 },
+      { name: "HTML5", level: 95 },
+      { name: "CSS3 / Tailwind", level: 90 },
+      { name: "JavaScript", level: 85 },
+      { name: "React", level: 60 },
     ],
   },
   {
-    title: "Backend",
+    title: "Backend & Lógica",
     skills: [
-      { name: "Node.js", level: 85 },
-      { name: "PostgreSQL", level: 80 },
-      { name: "MongoDB", level: 78 },
-      { name: "REST APIs", level: 90 },
-      { name: "GraphQL", level: 75 },
+      { name: "Python", level: 80 },
+      { name: "Linguagem C", level: 75 },
+      { name: "SQL (Banco de Dados)", level: 85 },
+      { name: "Lógica de Programação", level: 90 },
     ],
   },
   {
     title: "Ferramentas",
     skills: [
-      { name: "Git", level: 92 },
-      { name: "Docker", level: 70 },
-      { name: "Figma", level: 80 },
+      { name: "Git / GitHub", level: 85 },
       { name: "VS Code", level: 95 },
-      { name: "Linux", level: 75 },
+      { name: "Linux", level: 70 },
     ],
   },
 ]
