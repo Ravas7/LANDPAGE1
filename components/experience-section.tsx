@@ -1,6 +1,6 @@
 "use client"
 
-// --- SUA FORMAÇÃO AQUI ---
+// --- VERSÃO CORRIGIDA SEM ERROS DE IMPORT ---
 const academicHistory = [
   {
     institution: "Centro Universitário Jorge Amado (Unijorge)",
