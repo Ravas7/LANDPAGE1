@@ -1,18 +1,16 @@
-import { Github, Linkedin, Mail, Twitter } from "lucide-react"
+import { Github, Linkedin, Mail } from "lucide-react"
 
 const socialLinks = [
-  { icon: Github, href: "https://github.com", label: "GitHub" },
-  { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-  { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
-  { icon: Mail, href: "mailto:seu@email.com", label: "Email" },
+  { icon: Github, href: "https://github.com/Ravas7", label: "GitHub" }, 
+  { icon: Linkedin, href: "https://linkedin.com/in/SEU_USUARIO", label: "LinkedIn" },
+  { icon: Mail, href: "mailto:predroprem7@gmail.com", label: "Email" },
 ]
 
 export function Footer() {
   return (
-    <footer className="py-12 px-6 border-t border-border">
+    <footer className="py-12 px-6 border-t border-border bg-background">
       <div className="container mx-auto max-w-4xl">
         <div className="flex flex-col items-center gap-6">
-          {/* Social Links */}
           <div className="flex items-center gap-6">
             {socialLinks.map((social) => (
               <a
@@ -20,23 +18,22 @@ export function Footer() {
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors"
+                className="text-muted-foreground hover:text-primary transition-colors hover:scale-110 transform duration-200"
                 aria-label={social.label}
               >
-                <social.icon size={20} />
+                <social.icon size={24} />
               </a>
             ))}
           </div>
 
-          {/* Credit */}
-          <div className="text-center">
+          <div className="text-center space-y-2">
             <p className="text-sm text-muted-foreground font-mono">
               Desenvolvido por{" "}
-              <a href="#" className="text-primary hover:underline">
-                Seu Nome
-              </a>
+              <span className="text-primary font-medium">
+                Pedro Monteiro
+              </span>
             </p>
-            <p className="text-xs text-muted-foreground mt-2">
+            <p className="text-xs text-muted-foreground/60">
               © {new Date().getFullYear()} Todos os direitos reservados.
             </p>
           </div>
