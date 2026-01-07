@@ -1,7 +1,5 @@
 "use client"
 
-import { ExternalLink } from "lucide-react"
-
 // --- SUA FORMAÇÃO AQUI ---
 const academicHistory = [
   {
