@@ -11,38 +11,30 @@ export function AboutSection() {
         <div className="grid md:grid-cols-3 gap-12">
           <div className="md:col-span-2 space-y-4">
             <p className="text-muted-foreground leading-relaxed">
-              Sou um desenvolvedor apaixonado por criar interfaces acessíveis e pixel-perfect que combinam design
-              thoughtful com engenharia robusta. Meu trabalho favorito está na interseção de design e desenvolvimento,
-              criando experiências que não apenas parecem ótimas, mas são meticulosamente construídas para performance e
-              usabilidade.
+              Sou o <strong>Pedro Monteiro</strong>, tenho 19 anos e sou apaixonado por tecnologia. 
+              Atualmente, estou no <strong>3º semestre</strong> de Análise e Desenvolvimento de Sistemas na 
+              <span className="text-primary font-medium"> Unijorge</span>.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              Atualmente, trabalho como <span className="text-primary font-medium">Desenvolvedor Full Stack</span>,
-              contribuindo para a criação e manutenção de componentes de UI que impulsionam o frontend de aplicações
-              modernas. Trabalho em estreita colaboração com equipes multifuncionais para implementar e defender as
-              melhores práticas em acessibilidade web.
+              Embora esteja no início da minha carreira, dedico meus estudos intensamente às áreas de 
+              <span className="text-primary font-medium"> Back-end e Banco de Dados</span>. Gosto de entender como as 
+              coisas funcionam "por baixo do capô", estruturando dados e lógica de forma eficiente com C e Python.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              No passado, tive a oportunidade de desenvolver software em diversos ambientes — desde{" "}
-              <span className="text-primary font-medium">agências de publicidade</span> e{" "}
-              <span className="text-primary font-medium">grandes corporações</span> até{" "}
-              <span className="text-primary font-medium">startups</span> e{" "}
-              <span className="text-primary font-medium">estúdios de produto digital</span>.
+              Além das competências técnicas, possuo <strong>Inglês Intermediário para Avançado</strong>, o que me permite 
+              ler documentações internacionais e aprender constantemente.
             </p>
           </div>
 
           <div className="space-y-4">
-            <h3 className="text-sm uppercase tracking-widest text-muted-foreground font-medium">Tecnologias</h3>
-            <ul className="grid grid-cols-2 gap-2 text-sm">
+            <h3 className="text-sm uppercase tracking-widest text-muted-foreground font-medium">Interesses</h3>
+            <ul className="grid grid-cols-1 gap-2 text-sm">
               {[
-                "JavaScript (ES6+)",
-                "TypeScript",
-                "React",
-                "Next.js",
-                "Node.js",
-                "PostgreSQL",
-                "Tailwind CSS",
-                "Git",
+                "Desenvolvimento Backend",
+                "Modelagem de Banco de Dados",
+                "Lógica e Algoritmos",
+                "Python & C",
+                "APIs REST",
               ].map((tech) => (
                 <li key={tech} className="flex items-center gap-2 text-muted-foreground">
                   <span className="text-primary">▹</span>
