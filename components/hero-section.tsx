@@ -3,16 +3,16 @@
 import { Github, Linkedin, Mail, ArrowDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
-// --- SEUS LINKS ---
+// --- SEUS LINKS ATUALIZADOS ---
 const socialLinks = [
   { 
     icon: Github, 
-    href: "https://github.com/SEU_USUARIO", // <--- Coloque seu GitHub aqui
+    href: "https://github.com/Ravas7", // Atualizado
     label: "GitHub" 
   },
   { 
     icon: Linkedin, 
-    href: "https://linkedin.com/in/SEU_USUARIO", // <--- Coloque seu LinkedIn aqui
+    href: "https://linkedin.com/in/pedro-monteiro-ravas7", // Sugestão: verifique se é este o seu URL
     label: "LinkedIn" 
   },
   { 
@@ -38,34 +38,37 @@ export function HeroSection() {
               Pedro Monteiro
             </h1>
             <h2 className="text-2xl md:text-3xl font-medium text-primary">
-              Back-end & Banco de Dados
+              Desenvolvedor Full Stack
             </h2>
           </div>
 
-          <p className="text-muted-foreground text-lg leading-relaxed max-w-lg">
-            Estudante de Análise e Desenvolvimento de Sistemas. 
-            Tenho 19 anos e foco em criar soluções robustas com <strong>Python, SQL e C</strong>.
+          <p className="text-muted-foreground text-lg max-w-lg leading-relaxed">
+            Transformando ideias complexas em experiências digitais elegantes e funcionais. 
+            Especializado em construir aplicações web modernas e escaláveis.
           </p>
 
-          <div className="flex items-center gap-4 pt-4">
-            <Button asChild size="lg" className="rounded-full font-bold">
-              <a href="#contato">Entre em contato</a>
+          <div className="flex flex-wrap gap-4 pt-4">
+            <Button className="rounded-full" size="lg" asChild>
+              <a href="#contato">Entre em Contato</a>
             </Button>
-            
-            <div className="flex items-center gap-2 px-4">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.label}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-primary transition-colors p-2 rounded-lg hover:bg-secondary"
-                  aria-label={social.label}
-                >
-                  <social.icon size={24} />
-                </a>
-              ))}
-            </div>
+            <Button variant="outline" className="rounded-full" size="lg" asChild>
+              <a href="#projetos">Ver Projetos</a>
+            </Button>
+          </div>
+
+          <div className="flex items-center gap-4 pt-4">
+            {socialLinks.map((social) => (
+              <a
+                key={social.label}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary transition-colors p-2 rounded-lg hover:bg-secondary"
+                aria-label={social.label}
+              >
+                <social.icon size={24} />
+              </a>
+            ))}
           </div>
         </div>
 
@@ -74,9 +77,9 @@ export function HeroSection() {
           <div className="relative">
             <div className="w-72 h-72 md:w-96 md:h-96 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center animate-in fade-in zoom-in duration-1000">
               <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary/30">
-                {/* Certifique-se de que a imagem 'profile.png' está na pasta public */}
+                {/* CORREÇÃO AQUI: Adicionado /LANDPAGE1 para funcionar no GitHub Pages */}
                 <img 
-                  src="/profile.png" 
+                  src="/LANDPAGE1/profile.png" 
                   alt="Pedro Monteiro" 
                   className="w-full h-full object-cover" 
                 />
