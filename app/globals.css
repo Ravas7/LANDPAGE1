@@ -1,72 +1,72 @@
-/* Forçando atualização do CSS */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    /* TEMA CLARO */
-    --background: 0% 0 0;
-    --foreground: 0.13 0.02 260;
+    /* --- TEMA CLARO (Fundo Branco) --- */
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%; /* Texto quase preto */
 
-    --card: 100% 0 0;
-    --card-foreground: 0.13 0.02 260;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
 
-    --popover: 100% 0 0;
-    --popover-foreground: 0.13 0.02 260;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
 
-    /* SEU AZUL PROFISSIONAL */
-    --primary: 0.55 0.2 260;
-    --primary-foreground: 0.98 0 0;
+    /* Azul Escuro e Forte (Para ler bem no fundo branco) */
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
 
-    --secondary: 0.96 0.01 260;
-    --secondary-foreground: 0.25 0.05 260;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
 
-    --muted: 0.96 0.01 260;
-    --muted-foreground: 0.45 0.02 260;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 0.96 0.01 260;
-    --accent-foreground: 0.25 0.05 260;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
 
-    --destructive: 0.58 0.25 27;
-    --destructive-foreground: 0.98 0 0;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
 
-    --border: 0.92 0.01 260;
-    --input: 0.92 0.01 260;
-    --ring: 0.55 0.2 260;
-
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
     --radius: 0.5rem;
   }
 
   .dark {
-    /* TEMA ESCURO */
-    --background: 0.05 0.02 260;
-    --foreground: 0.98 0 0;
+    /* --- TEMA ESCURO (Fundo Preto/Cinza) --- */
+    --background: 222.2 84% 4.9%; /* Fundo bem escuro */
+    --foreground: 210 40% 98%;    /* Texto BRANCO (leitura perfeita) */
 
-    --card: 0.05 0.02 260;
-    --card-foreground: 0.98 0 0;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 0.05 0.02 260;
-    --popover-foreground: 0.98 0 0;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 0.55 0.2 260;
-    --primary-foreground: 0.98 0 0;
+    /* AQUI ESTÁ A MÁGICA: Azul Claro / Cyan (Para brilhar no fundo preto) */
+    /* Antes estava escuro, agora está com 60% de luz */
+    --primary: 217.2 91.2% 59.8%; 
+    --primary-foreground: 222.2 47.4% 11.2%;
 
-    --secondary: 0.2 0.04 260;
-    --secondary-foreground: 0.98 0 0;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 0.2 0.04 260;
-    --muted-foreground: 0.7 0.04 260;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 0.2 0.04 260;
-    --accent-foreground: 0.98 0 0;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
 
-    --destructive: 0.4 0.2 27;
-    --destructive-foreground: 0.98 0 0;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
 
-    --border: 0.2 0.04 260;
-    --input: 0.2 0.04 260;
-    --ring: 0.55 0.2 260;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
   }
 }
 
