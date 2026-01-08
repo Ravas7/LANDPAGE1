@@ -34,7 +34,6 @@ export function AboutSection() {
                 "Modelagem de Banco de Dados",
                 "Lógica e Algoritmos",
                 "Python & C",
-                "APIs REST",
               ].map((tech) => (
                 <li key={tech} className="flex items-center gap-2 text-muted-foreground">
                   <span className="text-primary">▹</span>
