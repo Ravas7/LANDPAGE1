@@ -1,13 +1,18 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  basePath: '/LANDPAGE1', // Certifique-se que o nome do repo é exatamente este (Maiúsculas importam!)
   
+  // ATENÇÃO: Se o seu repositório é "LANDPAGE1", mantenha assim.
+  // Se a URL do site fica ".../landpage1", mude para minúsculo aqui.
+  basePath: '/LANDPAGE1',
+  
+  // ADIÇÃO CRUCIAL: Força o caminho dos assets
+  assetPrefix: '/LANDPAGE1/',
+
   images: {
     unoptimized: true,
   },
 
-  // ISSO AQUI É O QUE VAI SALVAR SEU DEPLOY
   typescript: {
     ignoreBuildErrors: true,
   },
