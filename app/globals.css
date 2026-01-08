@@ -1,77 +1,77 @@
-@import "tailwindcss";
-@import "tw-animate-css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@custom-variant dark (&:is(.dark *));
+@layer base {
+  :root {
+    /* TEMA CLARO */
+    --background: 0% 0 0;
+    --foreground: 0.13 0.02 260;
 
-:root {
-  /* TEMA CLARO */
-  --background: oklch(0.99 0 0);
-  --foreground: oklch(0.13 0.02 260);
-  
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.13 0.02 260);
-  
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.13 0.02 260);
-  
-  /* AZUL PROFISSIONAL */
-  --primary: oklch(0.55 0.2 260); 
-  --primary-foreground: oklch(0.98 0 0);
-  
-  --secondary: oklch(0.96 0.01 260);
-  --secondary-foreground: oklch(0.25 0.05 260);
-  
-  --muted: oklch(0.96 0.01 260);
-  --muted-foreground: oklch(0.45 0.02 260);
-  
-  --accent: oklch(0.96 0.01 260);
-  --accent-foreground: oklch(0.25 0.05 260);
-  
-  --destructive: oklch(0.58 0.25 27);
-  --destructive-foreground: oklch(0.98 0 0);
+    --card: 100% 0 0;
+    --card-foreground: 0.13 0.02 260;
 
-  --border: oklch(0.92 0.01 260);
-  --input: oklch(0.92 0.01 260);
-  --ring: oklch(0.55 0.2 260);
-  
-  --radius: 0.5rem;
-}
+    --popover: 100% 0 0;
+    --popover-foreground: 0.13 0.02 260;
 
-.dark {
-  /* TEMA ESCURO (Preto Fundo) */
-  --background: oklch(0.05 0.01 260);
-  --foreground: oklch(0.98 0 0);
-  
-  --card: oklch(0.1 0.02 260);
-  --card-foreground: oklch(0.98 0 0);
-  
-  --popover: oklch(0.1 0.02 260);
-  --popover-foreground: oklch(0.98 0 0);
-  
-  /* AZUL NEON SUAVE */
-  --primary: oklch(0.65 0.18 260);
-  --primary-foreground: oklch(0.98 0 0);
-  
-  --secondary: oklch(0.15 0.03 260);
-  --secondary-foreground: oklch(0.98 0 0);
-  
-  --muted: oklch(0.15 0.03 260);
-  --muted-foreground: oklch(0.65 0.05 260);
-  
-  --accent: oklch(0.15 0.03 260);
-  --accent-foreground: oklch(0.98 0 0);
-  
-  --destructive: oklch(0.4 0.15 20);
-  --destructive-foreground: oklch(0.98 0 0);
-  
-  --border: oklch(0.2 0.03 260);
-  --input: oklch(0.2 0.03 260);
-  --ring: oklch(0.55 0.2 260);
+    /* SEU AZUL PROFISSIONAL */
+    --primary: 0.55 0.2 260;
+    --primary-foreground: 0.98 0 0;
+
+    --secondary: 0.96 0.01 260;
+    --secondary-foreground: 0.25 0.05 260;
+
+    --muted: 0.96 0.01 260;
+    --muted-foreground: 0.45 0.02 260;
+
+    --accent: 0.96 0.01 260;
+    --accent-foreground: 0.25 0.05 260;
+
+    --destructive: 0.58 0.25 27;
+    --destructive-foreground: 0.98 0 0;
+
+    --border: 0.92 0.01 260;
+    --input: 0.92 0.01 260;
+    --ring: 0.55 0.2 260;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    /* TEMA ESCURO */
+    --background: 0.05 0.02 260;
+    --foreground: 0.98 0 0;
+
+    --card: 0.05 0.02 260;
+    --card-foreground: 0.98 0 0;
+
+    --popover: 0.05 0.02 260;
+    --popover-foreground: 0.98 0 0;
+
+    --primary: 0.55 0.2 260;
+    --primary-foreground: 0.98 0 0;
+
+    --secondary: 0.2 0.04 260;
+    --secondary-foreground: 0.98 0 0;
+
+    --muted: 0.2 0.04 260;
+    --muted-foreground: 0.7 0.04 260;
+
+    --accent: 0.2 0.04 260;
+    --accent-foreground: 0.98 0 0;
+
+    --destructive: 0.4 0.2 27;
+    --destructive-foreground: 0.98 0 0;
+
+    --border: 0.2 0.04 260;
+    --input: 0.2 0.04 260;
+    --ring: 0.55 0.2 260;
+  }
 }
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border;
   }
   body {
     @apply bg-background text-foreground;
