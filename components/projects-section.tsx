@@ -7,9 +7,9 @@ const featuredProjects = [
     title: "API de Gerenciamento (Estudo)",
     description:
       "Desenvolvimento de uma API RESTful para gerenciamento de dados. Foco na estruturação correta dos endpoints, tratamento de erros e conexão eficiente com banco de dados.",
-    image: null, // Deixei null para não quebrar se não tiver imagem
+    image: null, 
     technologies: ["Python", "Flask/Django", "SQL", "Insomnia"],
-    github: "https://github.com/SEU_USUARIO",
+    github: "https://github.com/Ravas7", // Link geral do perfil ou coloque o link específico do repo
     live: null, 
     icon: Database,
   },
@@ -19,7 +19,7 @@ const featuredProjects = [
       "Repositório contendo implementações de algoritmos de ordenação, busca e estruturas de dados em C desenvolvidos durante o curso.",
     image: null,
     technologies: ["Linguagem C", "Lógica", "Estrutura de Dados"],
-    github: "https://github.com/SEU_USUARIO",
+    github: "https://github.com/Ravas7", // Link geral do perfil ou coloque o link específico do repo
     live: null,
     icon: Terminal,
   },
@@ -31,16 +31,16 @@ export function ProjectsSection() {
       <div className="container mx-auto max-w-4xl">
         <div className="flex items-center gap-4 mb-12">
           <span className="text-primary font-mono text-sm">03.</span>
-          <h2 className="text-3xl font-bold text-foreground">Projetos Acadêmicos</h2>
+          <h2 className="text-3xl font-bold text-foreground">Projetos</h2>
           <div className="flex-1 h-px bg-border" />
         </div>
 
-        <div className="grid gap-8">
+        <div className="grid md:grid-cols-2 gap-6">
           {featuredProjects.map((project, index) => (
-            <Card key={index} className="group overflow-hidden border-border/50 bg-card/50 hover:border-primary/50 transition-colors">
+            <Card key={index} className="group hover:border-primary/50 transition-colors duration-300">
               <CardHeader className="flex flex-row items-start justify-between space-y-0 pb-2">
                 <div className="flex items-center gap-3">
-                  <div className="p-2 bg-primary/10 rounded-lg text-primary">
+                  <div className="p-2 bg-primary/10 rounded-lg text-primary group-hover:scale-110 transition-transform duration-300">
                     <project.icon size={24} />
                   </div>
                   <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
