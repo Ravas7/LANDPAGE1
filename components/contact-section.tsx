@@ -46,8 +46,8 @@ export function ContactSection() {
               </div>
               <div>
                 <h3 className="font-medium text-foreground mb-1">Email</h3>
-                <a href="mailto:seu@email.com" className="text-muted-foreground hover:text-primary transition-colors">
-                  seu@email.com
+                <a href="mailto:pedroprem7@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
+                  pedroprem7@gmail.com
                 </a>
               </div>
             </div>
@@ -58,8 +58,8 @@ export function ContactSection() {
               </div>
               <div>
                 <h3 className="font-medium text-foreground mb-1">Telefone</h3>
-                <a href="tel:+5511999999999" className="text-muted-foreground hover:text-primary transition-colors">
-                  +55 (11) 99999-9999
+                <a href="tel:+5571993678190" className="text-muted-foreground hover:text-primary transition-colors">
+                  +55 (71) 99367-8190
                 </a>
               </div>
             </div>
@@ -70,7 +70,7 @@ export function ContactSection() {
               </div>
               <div>
                 <h3 className="font-medium text-foreground mb-1">Localização</h3>
-                <p className="text-muted-foreground">São Paulo, SP - Brasil</p>
+                <p className="text-muted-foreground">Salvador, BA - Brasil</p>
               </div>
             </div>
           </div>
