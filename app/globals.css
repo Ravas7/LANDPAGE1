@@ -4,69 +4,70 @@
 
 @layer base {
   :root {
-    /* --- TEMA CLARO (Fundo Branco) --- */
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%; /* Texto quase preto */
+    /* --- TEMA CLARO (Baseado na cor mais clara da paleta) --- */
+    --background: 189 25% 93%; /* #E8F1F2 - Fundo claro */
+    --foreground: 208 52% 16%; /* #13293D - Texto azul muito escuro */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%; /* Fundo de cartões branco */
+    --card-foreground: 208 52% 16%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 208 52% 16%;
 
-    /* Azul Escuro e Forte (Para ler bem no fundo branco) */
-    --primary: 221.2 83.2% 53.3%;
-    --primary-foreground: 210 40% 98%;
+    /* Azul Brilhante para destaque */
+    --primary: 202 78% 49%; /* #1B98E0 */
+    --primary-foreground: 0 0% 100%; /* Texto branco no botão */
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 197 63% 38%; /* #247BA0 - Azul médio */
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 189 25% 93%;
+    --muted-foreground: 200 100% 29%; /* #006494 - Azul escuro */
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 189 25% 93%;
+    --accent-foreground: 208 52% 16%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 221.2 83.2% 53.3%;
+    --border: 202 78% 49%; /* Borda azul brilhante */
+    --input: 202 78% 49%;
+    --ring: 202 78% 49%;
     --radius: 0.5rem;
   }
 
   .dark {
-    /* --- TEMA ESCURO (Fundo Preto/Cinza) --- */
-    --background: 222.2 84% 4.9%; /* Fundo bem escuro */
-    --foreground: 210 40% 98%;    /* Texto BRANCO (leitura perfeita) */
+    /* --- TEMA ESCURO (O Principal) --- */
+    /* A cor de fundo base será a mais escura, o degradê vem depois */
+    --background: 208 52% 16%; /* #13293D - Azul Prussiano */
+    --foreground: 0 0% 100%;    /* Texto BRANCO PURO */
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    /* Cartões com um tom ligeiramente diferente para contraste */
+    --card: 200 100% 29%; /* #006494 - Azul Safira com transparência */
+    --card-foreground: 0 0% 100%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 200 100% 29%;
+    --popover-foreground: 0 0% 100%;
 
-    /* AQUI ESTÁ A MÁGICA: Azul Claro / Cyan (Para brilhar no fundo preto) */
-    /* Antes estava escuro, agora está com 60% de luz */
-    --primary: 217.2 91.2% 59.8%; 
-    --primary-foreground: 222.2 47.4% 11.2%;
+    /* Azul Brilhante "Carolina Blue" para botões e links */
+    --primary: 202 78% 49%; /* #1B98E0 */
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 197 63% 38%; /* #247BA0 - Azul Celadon */
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 200 100% 29%;
+    --muted-foreground: 189 25% 93%; /* Texto secundário mais claro */
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 200 100% 29%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 197 63% 38%; /* Bordas em azul médio */
+    --input: 200 100% 29%;
+    --ring: 202 78% 49%; /* Anel de foco brilhante */
   }
 }
 
@@ -76,5 +77,18 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+
+  /* --- AQUI ESTÁ O SEGREDO DO DEGRADÊ --- */
+  .dark body {
+    /* Cria um degradê vertical suave usando as cores da sua paleta */
+    background-image: linear-gradient(
+      to bottom,
+      hsl(208, 52%, 16%), /* Prussian Blue (Topo) */
+      hsl(200, 100%, 29%), /* Sapphire Blue (Meio) */
+      hsl(197, 63%, 38%)  /* Celadon Blue (Fundo) */
+    );
+    background-attachment: fixed; /* O fundo fica fixo ao rolar */
+    min-height: 100vh; /* Garante que cobre a tela toda */
   }
 }
