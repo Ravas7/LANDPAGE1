@@ -4,7 +4,8 @@ const skillCategories = [
   {
     title: "Web Frontend",
     icon: Layout,
-    color: "text-cyan-400", // Cor do ícone e da barra
+    color: "text-cyan-400", 
+    barColor: "bg-cyan-400", // <--- Adicionei a cor da barra explicita
     skills: [
       { name: "HTML5", level: 95 },
       { name: "CSS3 / Tailwind", level: 90 },
@@ -14,8 +15,9 @@ const skillCategories = [
   },
   {
     title: "Backend & Lógica",
-    icon: Database, // Ou Code2 para representar código puro
+    icon: Database, 
     color: "text-purple-400",
+    barColor: "bg-purple-400", // <--- O Roxo agora vai aparecer
     skills: [
       { name: "Lógica de Programação", level: 90 },
       { name: "SQL (Banco de Dados)", level: 85 },
@@ -26,12 +28,11 @@ const skillCategories = [
   {
     title: "Ferramentas",
     icon: Wrench,
-    color: "text-green-400", // Um verde neon para diferenciar
+    color: "text-green-400", 
+    barColor: "bg-green-400", // <--- O Verde agora vai aparecer
     skills: [
       { name: "VS Code", level: 95 },
       { name: "Git / GitHub", level: 85 },
-      // Adicionei Linux como extra opcional para preencher o card, 
-      // mas se não quiser, pode apagar a linha abaixo:
       { name: "Linux (Básico)", level: 60 }, 
     ]
   },
@@ -77,7 +78,8 @@ export function SkillsSection() {
                     {/* Barra de Progresso Neon */}
                     <div className="h-2 w-full bg-gray-900 rounded-full overflow-hidden border border-white/5">
                       <div 
-                        className={`h-full rounded-full transition-all duration-1000 ease-out group-hover:shadow-[0_0_12px_currentColor] ${category.color.replace('text-', 'bg-')}`}
+                        // Agora usamos category.barColor direto, sem truques
+                        className={`h-full rounded-full transition-all duration-1000 ease-out group-hover:shadow-[0_0_12px_currentColor] ${category.barColor} ${category.color.replace('text', 'shadow')}`}
                         style={{ width: `${skill.level}%` }}
                       />
                     </div>
@@ -88,18 +90,8 @@ export function SkillsSection() {
           ))}
         </div>
 
-        {/* Soft Skills Adicionais (Opcional, mas fica bonito no design) */}
+        {/* Soft Skills Adicionais */}
         <div className="mt-16 text-center">
             <p className="text-gray-500 text-sm mb-6">Outras competências</p>
             <div className="flex flex-wrap justify-center gap-3">
-                {["Comunicação", "Liderança", "Scrum", "Inglês Técnico", "Resolução de Problemas"].map((item) => (
-                    <span key={item} className="px-4 py-2 border border-white/10 rounded-full text-gray-400 text-sm hover:text-cyan-400 hover:border-cyan-500/50 hover:bg-cyan-500/5 transition-all cursor-default">
-                        {item}
-                    </span>
-                ))}
-            </div>
-        </div>
-      </div>
-    </section>
-  )
-}
+                {["Comun
