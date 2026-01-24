@@ -22,16 +22,7 @@ const featuredProjects = [
     live: null, 
     icon: Terminal,
   },
-  {
-    title: "API de Gerenciamento",
-    description:
-      "API RESTful robusta para gerenciamento de dados. Foco em endpoints CRUD, tratamento de erros e banco de dados SQL.",
-    image: null,
-    technologies: ["Python", "Flask", "SQLAlchemy", "Insomnia"],
-    github: "https://github.com/Ravas7",
-    live: null,
-    icon: Database,
-  },
+
 ]
 
 export function ProjectsSection() {
