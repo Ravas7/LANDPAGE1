@@ -4,101 +4,75 @@ import { Github, Linkedin, Mail, ArrowDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const socialLinks = [
-  { 
-    icon: Github, 
-    href: "https://github.com/Ravas7",
-    label: "GitHub" 
-  },
-  { 
-    icon: Linkedin, 
-    href: "https://linkedin.com/in/pedro-monteiro-ravas7",
-    label: "LinkedIn" 
-  },
-  { 
-    icon: Mail, 
-    href: "mailto:predroprem7@gmail.com", 
-    label: "Email" 
-  },
+  { icon: Github, href: "https://github.com/Ravas7", label: "GitHub" },
+  { icon: Linkedin, href: "https://linkedin.com/in/pedro-monteiro-ravas7", label: "LinkedIn" },
+  { icon: Mail, href: "mailto:predroprem7@gmail.com", label: "Email" },
 ]
 
 export function HeroSection() {
   return (
-    <section className="min-h-screen flex items-center justify-center relative px-6 overflow-hidden">
-      {/* Efeito de luz de fundo opcional */}
-      <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-primary/20 rounded-full blur-[120px] -z-10 animate-pulse" />
-      <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-[120px] -z-10 animate-pulse delay-700" />
+    <section className="min-h-screen flex items-center justify-center relative px-6 py-20">
+      {/* Luzes de fundo ambientais */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[120px] -z-10" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-purple-500/10 rounded-full blur-[120px] -z-10" />
 
-      <div className="container mx-auto grid lg:grid-cols-2 gap-12 items-center py-20">
-        
-        <div className="space-y-6 z-10">
-          <div className="space-y-2">
-            <p className="text-primary text-sm uppercase tracking-widest font-medium font-mono">
-              Olá, eu sou
-            </p>
+      <div className="container mx-auto grid lg:grid-cols-2 gap-12 items-center">
+        <div className="space-y-8">
+          <div className="space-y-4">
+            <div className="inline-block px-4 py-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 text-sm font-mono tracking-wider">
+              OLÁ, EU SOU
+            </div>
             
-            {/* APLICANDO O BRILHO NO TEXTO AQUI: className="text-glow" */}
-            <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight text-balance text-glow">
+            <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight text-glow">
               Pedro Monteiro
             </h1>
-            <h2 className="text-2xl md:text-3xl font-medium text-primary/90">
+            <h2 className="text-2xl md:text-3xl font-medium bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
               Desenvolvedor Full Stack
             </h2>
           </div>
 
-          <p className="text-muted-foreground text-lg max-w-lg leading-relaxed">
+          <p className="text-gray-400 text-lg max-w-lg leading-relaxed">
             Transformando ideias complexas em experiências digitais elegantes e funcionais. 
-            Especializado em construir aplicações web modernas e escaláveis.
+            Especializado em interfaces modernas com performance e design futurista.
           </p>
 
-          <div className="flex flex-wrap gap-4 pt-4">
-            {/* Botões com brilho neon */}
-            <Button className="rounded-full neon-blue transition-all duration-300 hover:scale-105" size="lg" asChild>
+          <div className="flex flex-wrap gap-4">
+            <Button className="rounded-full neon-button h-12 px-8 font-bold text-md" asChild>
               <a href="#contato">Entre em Contato</a>
             </Button>
-            <Button variant="outline" className="rounded-full border-primary/50 hover:neon-purple transition-all duration-300" size="lg" asChild>
+            <Button variant="outline" className="rounded-full border-2 border-purple-500/50 hover:bg-purple-500/10 h-12 px-8 text-white hover:text-white" asChild>
               <a href="#projetos">Ver Projetos</a>
             </Button>
           </div>
 
-          <div className="flex items-center gap-4 pt-4">
+          <div className="flex items-center gap-6">
             {socialLinks.map((social) => (
               <a
                 key={social.label}
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary hover:neon-blue transition-all p-2 rounded-lg"
-                aria-label={social.label}
+                className="text-gray-400 hover:text-white transition-all hover:scale-110"
               >
-                <social.icon size={24} />
+                <social.icon size={28} />
               </a>
             ))}
           </div>
         </div>
 
-        <div className="relative flex justify-center lg:justify-end z-10">
-          <div className="relative">
-            {/* Círculo externo animado */}
-            <div className="w-72 h-72 md:w-96 md:h-96 rounded-full bg-gradient-to-br from-primary/30 to-purple-500/30 flex items-center justify-center animate-in fade-in zoom-in duration-1000 blur-md absolute" />
-            
-            {/* APLICANDO A BORDA BRILHANTE NA FOTO: className="border-glow" */}
-            <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-glow flex items-center justify-center relative z-20 bg-background/50 backdrop-blur-sm">
-              <img 
+        <div className="flex justify-center lg:justify-end relative">
+          <div className="w-72 h-72 md:w-96 md:h-96 rounded-full neon-card flex items-center justify-center p-1.5 overflow-hidden">
+             <img 
                 src="profile.png" 
                 alt="Pedro Monteiro" 
-                className="w-full h-full object-cover hover:scale-110 transition-transform duration-500" 
+                className="w-full h-full object-cover rounded-full" 
               />
-            </div>
           </div>
         </div>
       </div>
 
-      <a
-        href="#sobre"
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-muted-foreground hover:text-primary transition-colors animate-bounce"
-        aria-label="Rolar para baixo"
-      >
-        <ArrowDown size={24} />
+      <a href="#sobre" className="absolute bottom-10 left-1/2 -translate-x-1/2 text-cyan-500/50 hover:text-cyan-400 animate-bounce transition-colors">
+        <ArrowDown size={32} />
       </a>
     </section>
   )
