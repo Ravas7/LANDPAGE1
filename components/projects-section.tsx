@@ -13,24 +13,24 @@ const featuredProjects = [
     icon: ShoppingBag,
   },
   {
+    title: "Sistema SIMCON (Gestão de Contatos)",
+    description:
+      "Aplicação de alta performance em C. Utiliza alocação dinâmica de memória, manipulação de arquivos binários para persistência e arquitetura modular. Inclui funcionalidades de exportação (CSV), busca e ordenação via QuickSort.",
+    image: null, 
+    technologies: ["C", "Makefiles", "Binary Files", "Structs", "Ponteiros"],
+    github: "https://github.com/Ravas7", 
+    live: null, 
+    icon: Terminal,
+  },
+  {
     title: "API de Gerenciamento",
     description:
       "API RESTful robusta para gerenciamento de dados. Foco em endpoints CRUD, tratamento de erros e banco de dados SQL.",
-    image: null, 
-    technologies: ["Python", "Flask", "SQLAlchemy", "Insomnia"],
-    github: "https://github.com/Ravas7", 
-    live: null, 
-    icon: Database,
-  },
-  {
-    title: "Algoritmos e Dados",
-    description:
-      "Implementações otimizadas de algoritmos de ordenação, busca binária e estruturas de dados fundamentais em C.",
     image: null,
-    technologies: ["C", "Lógica", "Estrutura de Dados"],
+    technologies: ["Python", "Flask", "SQLAlchemy", "Insomnia"],
     github: "https://github.com/Ravas7",
     live: null,
-    icon: Terminal,
+    icon: Database,
   },
 ]
 
