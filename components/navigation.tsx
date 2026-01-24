@@ -1,103 +1,93 @@
 "use client"
 
-import { useState, useEffect } from "react"
-import { Menu, X } from "lucide-react"
-import { cn } from "@/lib/utils"
+import * as React from "react"
+import Link from "next/link"
+import { Menu } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 
 const navItems = [
   { label: "Sobre", href: "#sobre" },
-  { label: "Experiência", href: "#experiencia" },
   { label: "Projetos", href: "#projetos" },
-  { label: "Skills", href: "#skills" },
   { label: "Contato", href: "#contato" },
 ]
 
-export function Navigation() {
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const [activeSection, setActiveSection] = useState("")
+export function Navbar() {
+  const [isScrolled, setIsScrolled] = React.useState(false)
 
-  useEffect(() => {
+  React.useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50)
-
-      const sections = navItems.map((item) => item.href.replace("#", ""))
-      for (const section of sections.reverse()) {
-        const element = document.getElementById(section)
-        if (element) {
-          const rect = element.getBoundingClientRect()
-          if (rect.top <= 100) {
-            setActiveSection(section)
-            break
-          }
-        }
-      }
     }
-
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
   return (
     <header
-      className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        isScrolled ? "bg-background/80 backdrop-blur-md border-b border-border" : "bg-transparent",
-      )}
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+        isScrolled
+          ? "bg-[#020617]/80 backdrop-blur-md border-b border-white/10 py-4 shadow-[0_0_15px_rgba(6,182,212,0.1)]"
+          : "bg-transparent py-6"
+      }`}
     >
-      <nav className="container mx-auto px-6 py-4">
-        <div className="flex items-center justify-between">
-          <a href="#" className="text-xl font-bold text-foreground hover:text-primary transition-colors">
-            SN<span className="text-primary">.</span>
-          </a>
+      <div className="container mx-auto px-6 flex items-center justify-between">
+        <Link 
+          href="/" 
+          className="text-xl font-bold tracking-tighter text-white hover:text-cyan-400 transition-colors flex items-center gap-2"
+        >
+          {/* AQUI ESTÁ A TROCA DO NOME */}
+          <span className="text-cyan-400">&lt;</span>
+          <span className="text-glow">Pedro Monteiro</span>
+          <span className="text-cyan-400">/&gt;</span>
+        </Link>
 
-          {/* Desktop Navigation */}
-          <ul className="hidden md:flex items-center gap-8">
-            {navItems.map((item) => (
-              <li key={item.href}>
-                <a
-                  href={item.href}
-                  className={cn(
-                    "text-sm uppercase tracking-widest transition-colors hover:text-primary",
-                    activeSection === item.href.replace("#", "") ? "text-primary" : "text-muted-foreground",
-                  )}
-                >
-                  {item.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden text-foreground"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle menu"
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex items-center gap-8">
+          {navItems.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="text-sm font-medium text-gray-400 hover:text-cyan-400 hover:text-glow transition-all duration-300 relative group"
+            >
+              {item.label}
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-cyan-400 transition-all duration-300 group-hover:w-full box-shadow-[0_0_10px_#06b6d4]"></span>
+            </Link>
+          ))}
+          <Button 
+            className="neon-button rounded-full text-xs font-bold px-6" 
+            size="sm"
+            asChild
           >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
+            <a href="#contato">Vamos Conversar</a>
+          </Button>
+        </nav>
 
         {/* Mobile Navigation */}
-        {isMobileMenuOpen && (
-          <ul className="md:hidden mt-4 pb-4 flex flex-col gap-4 border-t border-border pt-4">
-            {navItems.map((item) => (
-              <li key={item.href}>
-                <a
+        <Sheet>
+          <SheetTrigger asChild>
+            <Button variant="ghost" size="icon" className="md:hidden text-white hover:bg-white/10 hover:text-cyan-400">
+              <Menu size={24} />
+            </Button>
+          </SheetTrigger>
+          <SheetContent side="right" className="bg-[#020617]/95 border-l border-white/10 backdrop-blur-xl">
+            <div className="flex flex-col gap-8 mt-12">
+              {navItems.map((item) => (
+                <Link
+                  key={item.href}
                   href={item.href}
-                  className={cn(
-                    "block text-sm uppercase tracking-widest transition-colors hover:text-primary",
-                    activeSection === item.href.replace("#", "") ? "text-primary" : "text-muted-foreground",
-                  )}
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-lg font-medium text-gray-300 hover:text-cyan-400 transition-colors"
                 >
                   {item.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        )}
-      </nav>
+                </Link>
+              ))}
+              <Button className="neon-button w-full" asChild>
+                <a href="#contato">Entre em Contato</a>
+              </Button>
+            </div>
+          </SheetContent>
+        </Sheet>
+      </div>
     </header>
   )
 }
