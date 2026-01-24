@@ -74,3 +74,36 @@
     min-height: 100vh;
   }
 }
+@layer utilities {
+  /* Brilho Neon Azul (Baseado na sua cor Carolina Blue) */
+  .neon-blue {
+    box-shadow: 0 0 5px #1B98E0, 
+                0 0 15px rgba(27, 152, 224, 0.6), 
+                0 0 30px rgba(27, 152, 224, 0.3);
+    border-color: #1B98E0;
+  }
+
+  /* Brilho Neon Roxo (Para o contraste estilo Cyberpunk) */
+  .neon-purple {
+    box-shadow: 0 0 5px #d946ef, 
+                0 0 15px rgba(217, 70, 239, 0.6), 
+                0 0 30px rgba(217, 70, 239, 0.3);
+    border-color: #d946ef;
+  }
+
+  /* Efeito de texto brilhante misto */
+  .text-glow {
+    text-shadow: 0 0 10px rgba(27, 152, 224, 0.8),
+                 0 0 20px rgba(217, 70, 239, 0.5);
+  }
+  
+  /* Borda gradiente brilhante (Para cartões e fotos) */
+  .border-glow {
+    border: 2px solid transparent;
+    background-image: linear-gradient(rgba(19, 41, 61, 0.9), rgba(19, 41, 61, 0.9)), 
+                      linear-gradient(to right, #1B98E0, #d946ef);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    box-shadow: 0 0 15px rgba(27, 152, 224, 0.3), 0 0 30px rgba(217, 70, 239, 0.2);
+  }
+}
