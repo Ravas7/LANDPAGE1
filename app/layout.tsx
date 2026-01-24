@@ -10,16 +10,10 @@ export const metadata: Metadata = {
   title: "Pedro Monteiro | Desenvolvedor Full Stack",
   description:
     "Portfólio profissional - Desenvolvedor Full Stack especializado em criar experiências digitais incríveis",
-  icons: {
-    icon: [
-      {
-        icon: '/icon.svg', 
-    shortcut: '/icon.svg',
-    apple: '/icon.svg', 
-      },
-    ],
+    icons: {
+    icon: "/icon.svg", // O Next.js sabe que "/" se refere à pasta public
   },
-}
+},
 
 export default function RootLayout({
   children,
