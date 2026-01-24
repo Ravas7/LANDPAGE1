@@ -10,10 +10,10 @@ export const metadata: Metadata = {
   title: "Pedro Monteiro | Desenvolvedor Full Stack",
   description:
     "Portfólio profissional - Desenvolvedor Full Stack especializado em criar experiências digitais incríveis",
-    icons: {
+  icons: {
     icon: "/icon.svg", // O Next.js sabe que "/" se refere à pasta public
   },
-},
+}; // <--- AQUI ESTAVA O ERRO: Troquei a vírgula por ponto e vírgula
 
 export default function RootLayout({
   children,
