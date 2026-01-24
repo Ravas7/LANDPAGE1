@@ -1,25 +1,35 @@
-import { ExternalLink, Github, Database, Terminal } from "lucide-react"
+import { ExternalLink, Github, Database, Terminal, ShoppingBag } from "lucide-react"
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
+import Image from "next/image"
 
-// --- SEUS PROJETOS DE ESTUDO ---
 const featuredProjects = [
   {
-    title: "API de Gerenciamento (Estudo)",
+    title: "C&R Streetwear (E-commerce)",
     description:
-      "Desenvolvimento de uma API RESTful para gerenciamento de dados. Foco na estruturação correta dos endpoints, tratamento de erros e conexão eficiente com banco de dados.",
+      "Plataforma Full Stack de vendas online. Integração completa de pagamentos via Mercado Pago, gestão de dados e autenticação com Supabase e API otimizada com Hono. Interface moderna construída com Shadcn UI e React Hook Form para alta performance e validação.",
+    image: "CRPROJECT.png", 
+    technologies: ["React (Vite)", "Supabase", "Mercado Pago", "Shadcn UI", "Hono"],
+    github: "https://github.com/Ravas7/C-R-STREET1",
+    live: "https://crstreet.com.br",
+    icon: ShoppingBag,
+  },
+  {
+    title: "API de Gerenciamento",
+    description:
+      "Desenvolvimento de uma API RESTful robusta para gerenciamento de dados. Foco na estruturação correta dos endpoints (CRUD), tratamento de erros escalável e conexão eficiente com banco de dados SQL.",
     image: null, 
-    technologies: ["Python", "Flask/Django", "SQL", "Insomnia"],
-    github: "https://github.com/Ravas7", // Link geral do perfil ou coloque o link específico do repo
+    technologies: ["Python", "Flask", "SQLAlchemy", "Insomnia"],
+    github: "https://github.com/Ravas7", 
     live: null, 
     icon: Database,
   },
   {
     title: "Algoritmos e Estrutura de Dados",
     description:
-      "Repositório contendo implementações de algoritmos de ordenação, busca e estruturas de dados em C desenvolvidos durante o curso.",
+      "Repositório de estudo contendo implementações otimizadas de algoritmos de ordenação, busca binária e estruturas de dados fundamentais em C, demonstrando forte base em lógica de programação.",
     image: null,
-    technologies: ["Linguagem C", "Lógica", "Estrutura de Dados"],
-    github: "https://github.com/Ravas7", // Link geral do perfil ou coloque o link específico do repo
+    technologies: ["C", "Lógica", "Estrutura de Dados"],
+    github: "https://github.com/Ravas7",
     live: null,
     icon: Terminal,
   },
@@ -37,34 +47,64 @@ export function ProjectsSection() {
 
         <div className="grid md:grid-cols-2 gap-6">
           {featuredProjects.map((project, index) => (
-            <Card key={index} className="group hover:border-primary/50 transition-colors duration-300">
-              <CardHeader className="flex flex-row items-start justify-between space-y-0 pb-2">
-                <div className="flex items-center gap-3">
-                  <div className="p-2 bg-primary/10 rounded-lg text-primary group-hover:scale-110 transition-transform duration-300">
-                    <project.icon size={24} />
+            <Card key={index} className="group hover:border-primary/50 transition-colors duration-300 overflow-hidden">
+              {/* LÓGICA DE IMAGEM: Se tiver imagem, mostra ela. Se não, mostra o cabeçalho padrão */}
+              {project.image ? (
+                <div className="w-full h-48 overflow-hidden relative border-b border-border">
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute top-2 right-2 flex gap-2">
+                    <div className="p-2 bg-background/80 backdrop-blur-sm rounded-lg text-primary border border-primary/20">
+                      <project.icon size={20} />
+                    </div>
                   </div>
+                </div>
+              ) : (
+                <CardHeader className="flex flex-row items-start justify-between space-y-0 pb-2">
+                  <div className="flex items-center gap-3">
+                    <div className="p-2 bg-primary/10 rounded-lg text-primary group-hover:scale-110 transition-transform duration-300">
+                      <project.icon size={24} />
+                    </div>
+                  </div>
+                </CardHeader>
+              )}
+              
+              <CardContent className={`space-y-4 ${project.image ? 'pt-6' : ''}`}>
+                <div className="flex justify-between items-start">
                   <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
                     {project.title}
                   </h3>
+                  
+                  <div className="flex gap-3">
+                    {project.github && (
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-muted-foreground hover:text-primary transition-colors"
+                        aria-label="Ver código no GitHub"
+                      >
+                        <Github size={20} />
+                      </a>
+                    )}
+                    {project.live && (
+                      <a
+                        href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-muted-foreground hover:text-primary transition-colors"
+                        aria-label="Ver projeto online"
+                      >
+                        <ExternalLink size={20} />
+                      </a>
+                    )}
+                  </div>
                 </div>
-                
-                <div className="flex gap-4">
-                  {project.github && (
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-muted-foreground hover:text-primary transition-colors"
-                      aria-label="Ver código no GitHub"
-                    >
-                      <Github size={20} />
-                    </a>
-                  )}
-                </div>
-              </CardHeader>
-              
-              <CardContent className="space-y-4">
-                <p className="text-muted-foreground leading-relaxed">
+
+                <p className="text-muted-foreground leading-relaxed text-sm">
                   {project.description}
                 </p>
                 
