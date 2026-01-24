@@ -4,57 +4,26 @@
 
 @layer base {
   :root {
-    --background: 209 53% 16%;
-    --foreground: 186 26% 93%;
-
-    --card: 200 100% 29%;
-    --card-foreground: 186 26% 93%;
-
-    --popover: 209 53% 16%;
-    --popover-foreground: 186 26% 93%;
-
-    --primary: 202 79% 49%;
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 199 89% 48%;
     --primary-foreground: 0 0% 100%;
-
-    --secondary: 198 63% 38%;
-    --secondary-foreground: 0 0% 100%;
-
-    --muted: 200 100% 29%;
-    --muted-foreground: 186 26% 80%;
-
-    --accent: 198 63% 38%;
-    --accent-foreground: 0 0% 100%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 100%;
-
-    --border: 198 63% 38%;
-    --input: 200 100% 29%;
-    --ring: 202 79% 49%;
-
-    --radius: 0.5rem;
-  }
-
-  .dark {
-    --background: 209 53% 16%;
-    --foreground: 186 26% 93%;
-    --card: 200 100% 29%;
-    --card-foreground: 186 26% 93%;
-    --popover: 209 53% 16%;
-    --popover-foreground: 186 26% 93%;
-    --primary: 202 79% 49%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 198 63% 38%;
-    --secondary-foreground: 0 0% 100%;
-    --muted: 200 100% 29%;
-    --muted-foreground: 186 26% 80%;
-    --accent: 198 63% 38%;
-    --accent-foreground: 0 0% 100%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 198 63% 38%;
-    --input: 200 100% 29%;
-    --ring: 202 79% 49%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 199 89% 48%;
+    --radius: 0.5rem;
   }
 }
 
@@ -64,46 +33,47 @@
   }
   body {
     @apply bg-background text-foreground;
-    background: linear-gradient(
-      to bottom,
-      #13293D 0%,
-      #006494 40%,
-      #247BA0 100%
-    );
-    background-attachment: fixed;
+    /* O Fundo Global Escuro com toque Roxo/Azul */
+    background: radial-gradient(circle at 50% 0%, #1e1b4b 0%, #020617 100%);
     min-height: 100vh;
+    overflow-x: hidden;
   }
 }
+
 @layer utilities {
-  /* Brilho Neon Azul (Baseado na sua cor Carolina Blue) */
-  .neon-blue {
-    box-shadow: 0 0 5px #1B98E0, 
-                0 0 15px rgba(27, 152, 224, 0.6), 
-                0 0 30px rgba(27, 152, 224, 0.3);
-    border-color: #1B98E0;
-  }
-
-  /* Brilho Neon Roxo (Para o contraste estilo Cyberpunk) */
-  .neon-purple {
-    box-shadow: 0 0 5px #d946ef, 
-                0 0 15px rgba(217, 70, 239, 0.6), 
-                0 0 30px rgba(217, 70, 239, 0.3);
-    border-color: #d946ef;
-  }
-
-  /* Efeito de texto brilhante misto */
   .text-glow {
-    text-shadow: 0 0 10px rgba(27, 152, 224, 0.8),
-                 0 0 20px rgba(217, 70, 239, 0.5);
+    text-shadow: 0 0 20px rgba(6, 182, 212, 0.5), 
+                 0 0 40px rgba(217, 70, 239, 0.3);
+  }
+
+  /* A Mágica: Borda Gradiente com Fundo Escuro */
+  .neon-card {
+    position: relative;
+    background: linear-gradient(#020617, #020617) padding-box,
+                linear-gradient(to right, #06b6d4, #d946ef) border-box;
+    border: 2px solid transparent;
+    border-radius: 1rem;
+    box-shadow: 0 0 15px rgba(6, 182, 212, 0.15), 
+                0 0 30px rgba(217, 70, 239, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  .neon-card:hover {
+    box-shadow: 0 0 30px rgba(6, 182, 212, 0.4), 
+                0 0 50px rgba(217, 70, 239, 0.3);
+    transform: translateY(-5px);
+  }
+
+  .neon-button {
+    background: linear-gradient(90deg, #06b6d4, #d946ef);
+    color: white;
+    box-shadow: 0 0 15px rgba(6, 182, 212, 0.5);
+    border: none;
+    transition: all 0.3s ease;
   }
   
-  /* Borda gradiente brilhante (Para cartões e fotos) */
-  .border-glow {
-    border: 2px solid transparent;
-    background-image: linear-gradient(rgba(19, 41, 61, 0.9), rgba(19, 41, 61, 0.9)), 
-                      linear-gradient(to right, #1B98E0, #d946ef);
-    background-origin: border-box;
-    background-clip: padding-box, border-box;
-    box-shadow: 0 0 15px rgba(27, 152, 224, 0.3), 0 0 30px rgba(217, 70, 239, 0.2);
+  .neon-button:hover {
+    opacity: 0.9;
+    box-shadow: 0 0 30px rgba(217, 70, 239, 0.6);
   }
 }
