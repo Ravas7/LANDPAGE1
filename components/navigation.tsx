@@ -5,9 +5,12 @@ import { Menu, X, Github, Linkedin, Mail } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 
+// AQUI ESTÃO OS 5 LINKS CORRETOS AGORA
 const navItems = [
   { label: "Sobre", href: "#sobre" },
+  { label: "Experiência", href: "#experiencia" },
   { label: "Projetos", href: "#projetos" },
+  { label: "Skills", href: "#skills" },
   { label: "Contato", href: "#contato" },
 ]
 
@@ -41,7 +44,6 @@ export function Navigation() {
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        // MUDANÇA VISUAL: Fundo escuro com borda brilhante suave
         isScrolled 
           ? "bg-[#020617]/80 backdrop-blur-md border-b border-cyan-500/20 shadow-[0_0_15px_rgba(6,182,212,0.1)] py-4" 
           : "bg-transparent py-6"
@@ -59,13 +61,13 @@ export function Navigation() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
-            <ul className="flex items-center gap-8">
+            <ul className="flex items-center gap-6">
               {navItems.map((item) => (
                 <li key={item.href}>
                   <a
                     href={item.href}
                     className={cn(
-                      "text-sm font-medium tracking-wide transition-all duration-300 relative group py-2",
+                      "text-xs uppercase tracking-widest font-medium transition-all duration-300 relative group py-2",
                       activeSection === item.href.replace("#", "") 
                         ? "text-cyan-400 text-glow" 
                         : "text-gray-400 hover:text-white"
@@ -85,12 +87,12 @@ export function Navigation() {
             <div className="h-6 w-[1px] bg-white/10 mx-2"></div>
 
             {/* Ícones Sociais */}
-            <div className="flex gap-4">
+            <div className="flex gap-3">
                <a href="https://github.com/Ravas7" target="_blank" className="text-gray-400 hover:text-cyan-400 transition-colors hover:scale-110">
-                   <Github size={20} />
+                   <Github size={18} />
                </a>
                <a href="https://linkedin.com/in/pedro-monteiro-ravas7" target="_blank" className="text-gray-400 hover:text-cyan-400 transition-colors hover:scale-110">
-                   <Linkedin size={20} />
+                   <Linkedin size={18} />
                </a>
             </div>
 
@@ -118,7 +120,7 @@ export function Navigation() {
                   <a
                     href={item.href}
                     className={cn(
-                      "block text-lg font-medium transition-colors py-2",
+                      "block text-sm uppercase tracking-widest font-medium transition-colors py-2",
                       activeSection === item.href.replace("#", "") 
                         ? "text-cyan-400" 
                         : "text-gray-300 hover:text-white"
