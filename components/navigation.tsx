@@ -91,7 +91,7 @@ export function Navigation() {
                <a href="https://github.com/Ravas7" target="_blank" className="text-gray-400 hover:text-cyan-400 transition-colors hover:scale-110">
                    <Github size={18} />
                </a>
-               <a href="https://linkedin.com/in/pedro-monteiro-ravas7" target="_blank" className="text-gray-400 hover:text-cyan-400 transition-colors hover:scale-110">
+               <a href="https://www.linkedin.com/in/pedro-monteiro-9220973a8/" target="_blank" className="text-gray-400 hover:text-cyan-400 transition-colors hover:scale-110">
                    <Linkedin size={18} />
                </a>
             </div>
