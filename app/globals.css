@@ -4,70 +4,57 @@
 
 @layer base {
   :root {
-    /* --- TEMA CLARO (Baseado na cor mais clara da paleta) --- */
-    --background: 189 25% 93%; /* #E8F1F2 - Fundo claro */
-    --foreground: 208 52% 16%; /* #13293D - Texto azul muito escuro */
+    --background: 209 53% 16%;
+    --foreground: 186 26% 93%;
 
-    --card: 0 0% 100%; /* Fundo de cartões branco */
-    --card-foreground: 208 52% 16%;
+    --card: 200 100% 29%;
+    --card-foreground: 186 26% 93%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 208 52% 16%;
+    --popover: 209 53% 16%;
+    --popover-foreground: 186 26% 93%;
 
-    /* Azul Brilhante para destaque */
-    --primary: 202 78% 49%; /* #1B98E0 */
-    --primary-foreground: 0 0% 100%; /* Texto branco no botão */
+    --primary: 202 79% 49%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 197 63% 38%; /* #247BA0 - Azul médio */
+    --secondary: 198 63% 38%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 189 25% 93%;
-    --muted-foreground: 200 100% 29%; /* #006494 - Azul escuro */
+    --muted: 200 100% 29%;
+    --muted-foreground: 186 26% 80%;
 
-    --accent: 189 25% 93%;
-    --accent-foreground: 208 52% 16%;
+    --accent: 198 63% 38%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 202 78% 49%; /* Borda azul brilhante */
-    --input: 202 78% 49%;
-    --ring: 202 78% 49%;
+    --border: 198 63% 38%;
+    --input: 200 100% 29%;
+    --ring: 202 79% 49%;
+
     --radius: 0.5rem;
   }
 
   .dark {
-    /* --- TEMA ESCURO (O Principal) --- */
-    /* A cor de fundo base será a mais escura, o degradê vem depois */
-    --background: 208 52% 16%; /* #13293D - Azul Prussiano */
-    --foreground: 0 0% 100%;    /* Texto BRANCO PURO */
-
-    /* Cartões com um tom ligeiramente diferente para contraste */
-    --card: 200 100% 29%; /* #006494 - Azul Safira com transparência */
-    --card-foreground: 0 0% 100%;
-
-    --popover: 200 100% 29%;
-    --popover-foreground: 0 0% 100%;
-
-    /* Azul Brilhante "Carolina Blue" para botões e links */
-    --primary: 202 78% 49%; /* #1B98E0 */
+    --background: 209 53% 16%;
+    --foreground: 186 26% 93%;
+    --card: 200 100% 29%;
+    --card-foreground: 186 26% 93%;
+    --popover: 209 53% 16%;
+    --popover-foreground: 186 26% 93%;
+    --primary: 202 79% 49%;
     --primary-foreground: 0 0% 100%;
-
-    --secondary: 197 63% 38%; /* #247BA0 - Azul Celadon */
+    --secondary: 198 63% 38%;
     --secondary-foreground: 0 0% 100%;
-
     --muted: 200 100% 29%;
-    --muted-foreground: 189 25% 93%; /* Texto secundário mais claro */
-
-    --accent: 200 100% 29%;
+    --muted-foreground: 186 26% 80%;
+    --accent: 198 63% 38%;
     --accent-foreground: 0 0% 100%;
-
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 100%;
-
-    --border: 197 63% 38%; /* Bordas em azul médio */
+    --border: 198 63% 38%;
     --input: 200 100% 29%;
-    --ring: 202 78% 49%; /* Anel de foco brilhante */
+    --ring: 202 79% 49%;
   }
 }
 
@@ -77,18 +64,13 @@
   }
   body {
     @apply bg-background text-foreground;
-  }
-
-  /* --- AQUI ESTÁ O SEGREDO DO DEGRADÊ --- */
-  .dark body {
-    /* Cria um degradê vertical suave usando as cores da sua paleta */
-    background-image: linear-gradient(
+    background: linear-gradient(
       to bottom,
-      hsl(208, 52%, 16%), /* Prussian Blue (Topo) */
-      hsl(200, 100%, 29%), /* Sapphire Blue (Meio) */
-      hsl(197, 63%, 38%)  /* Celadon Blue (Fundo) */
+      #13293D 0%,
+      #006494 40%,
+      #247BA0 100%
     );
-    background-attachment: fixed; /* O fundo fica fixo ao rolar */
-    min-height: 100vh; /* Garante que cobre a tela toda */
+    background-attachment: fixed;
+    min-height: 100vh;
   }
 }
