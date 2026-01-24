@@ -1,13 +1,13 @@
 import { ExternalLink, Github, Database, Terminal, ShoppingBag } from "lucide-react"
-import { Card, CardContent, CardHeader } from "@/components/ui/card"
+import { Card, CardContent } from "@/components/ui/card"
 
 const featuredProjects = [
   {
-    title: "C&R Streetwear (E-commerce)",
+    title: "C&R Streetwear",
     description:
-      "Plataforma Full Stack de vendas online. Integração completa de pagamentos via Mercado Pago, gestão de dados e autenticação com Supabase e API otimizada com Hono. Interface moderna construída com Shadcn UI e React Hook Form.",
+      "Plataforma Full Stack de vendas online. Integração com Mercado Pago, Supabase e API Hono. Interface moderna com Shadcn UI.",
     image: "CRPROJECT.png", 
-    technologies: ["React (Vite)", "Supabase", "Mercado Pago", "Shadcn UI", "Hono"],
+    technologies: ["React", "Supabase", "Mercado Pago", "Shadcn UI"],
     github: "https://github.com/Ravas7/C-R-STREET1",
     live: "https://crstreet.com.br",
     icon: ShoppingBag,
@@ -15,7 +15,7 @@ const featuredProjects = [
   {
     title: "API de Gerenciamento",
     description:
-      "Desenvolvimento de uma API RESTful robusta para gerenciamento de dados. Foco na estruturação correta dos endpoints (CRUD), tratamento de erros escalável e conexão eficiente com banco de dados SQL.",
+      "API RESTful robusta para gerenciamento de dados. Foco em endpoints CRUD, tratamento de erros e banco de dados SQL.",
     image: null, 
     technologies: ["Python", "Flask", "SQLAlchemy", "Insomnia"],
     github: "https://github.com/Ravas7", 
@@ -23,9 +23,9 @@ const featuredProjects = [
     icon: Database,
   },
   {
-    title: "Algoritmos e Estrutura de Dados",
+    title: "Algoritmos e Dados",
     description:
-      "Repositório de estudo contendo implementações otimizadas de algoritmos de ordenação, busca binária e estruturas de dados fundamentais em C.",
+      "Implementações otimizadas de algoritmos de ordenação, busca binária e estruturas de dados fundamentais em C.",
     image: null,
     technologies: ["C", "Lógica", "Estrutura de Dados"],
     github: "https://github.com/Ravas7",
@@ -36,86 +36,71 @@ const featuredProjects = [
 
 export function ProjectsSection() {
   return (
-    <section id="projetos" className="py-24 px-6">
-      <div className="container mx-auto max-w-4xl">
-        <div className="flex items-center gap-4 mb-12">
-          <span className="text-primary font-mono text-sm">03.</span>
-          <h2 className="text-3xl font-bold text-white text-glow">Projetos</h2>
-          <div className="flex-1 h-px bg-gradient-to-r from-primary/50 to-purple-500/50" />
+    <section id="projetos" className="py-24 px-6 relative">
+      <div className="container mx-auto max-w-5xl">
+        <div className="flex items-center gap-4 mb-16">
+          <h2 className="text-4xl font-bold text-white text-glow">Projetos</h2>
+          <div className="flex-1 h-[2px] bg-gradient-to-r from-cyan-500 to-transparent" />
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
           {featuredProjects.map((project, index) => (
-            // APLICANDO O BRILHO NO HOVER DO CARTÃO
-            <Card key={index} className="group bg-card/50 backdrop-blur-sm border-white/10 transition-all duration-300 hover:border-glow hover:-translate-y-2 overflow-hidden">
-              {project.image ? (
-                <div className="w-full h-48 overflow-hidden relative border-b border-white/10 group-hover:border-primary/50 transition-colors">
-                  <img 
-                    src={project.image} 
-                    alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 group-hover:rotate-1"
-                  />
-                  <div className="absolute top-2 right-2 flex gap-2">
-                    <div className="p-2 bg-background/80 backdrop-blur-sm rounded-lg text-primary group-hover:neon-blue transition-all">
+            <div key={index} className="neon-card group h-full">
+              <div className="p-0 h-full flex flex-col">
+                {project.image ? (
+                  <div className="w-full h-52 overflow-hidden rounded-t-lg relative">
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#020617] to-transparent opacity-60 z-10" />
+                    <img 
+                      src={project.image} 
+                      alt={project.title}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                    <div className="absolute top-3 right-3 z-20 p-2 bg-black/50 backdrop-blur-md rounded-lg text-cyan-400 border border-cyan-500/30">
                       <project.icon size={20} />
                     </div>
                   </div>
-                </div>
-              ) : (
-                <CardHeader className="flex flex-row items-start justify-between space-y-0 pb-2">
-                  <div className="flex items-center gap-3">
-                    <div className="p-2 bg-primary/10 rounded-lg text-primary group-hover:neon-blue transition-all duration-300 group-hover:scale-110">
+                ) : (
+                  <div className="p-6 pb-2">
+                    <div className="w-12 h-12 bg-gradient-to-br from-cyan-500/20 to-purple-500/20 rounded-xl flex items-center justify-center text-cyan-400 border border-cyan-500/30">
                       <project.icon size={24} />
                     </div>
                   </div>
-                </CardHeader>
-              )}
-              
-              <CardContent className={`space-y-4 ${project.image ? 'pt-6' : ''}`}>
-                <div className="flex justify-between items-start">
-                  <h3 className="text-xl font-semibold text-white group-hover:text-primary transition-colors">
-                    {project.title}
-                  </h3>
+                )}
+                
+                <div className="p-6 flex flex-col flex-1">
+                  <div className="flex justify-between items-start mb-4">
+                    <h3 className="text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors">
+                      {project.title}
+                    </h3>
+                    
+                    <div className="flex gap-3">
+                      {project.github && (
+                        <a href={project.github} target="_blank" className="text-gray-400 hover:text-white transition-colors">
+                          <Github size={20} />
+                        </a>
+                      )}
+                      {project.live && (
+                        <a href={project.live} target="_blank" className="text-gray-400 hover:text-white transition-colors">
+                          <ExternalLink size={20} />
+                        </a>
+                      )}
+                    </div>
+                  </div>
+
+                  <p className="text-gray-400 mb-6 leading-relaxed text-sm flex-1">
+                    {project.description}
+                  </p>
                   
-                  <div className="flex gap-3">
-                    {project.github && (
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-muted-foreground hover:text-primary hover:neon-blue rounded-md transition-all"
-                        aria-label="Ver código no GitHub"
-                      >
-                        <Github size={20} />
-                      </a>
-                    )}
-                    {project.live && (
-                      <a
-                        href={project.live}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-muted-foreground hover:text-primary hover:neon-blue rounded-md transition-all"
-                        aria-label="Ver projeto online"
-                      >
-                        <ExternalLink size={20} />
-                      </a>
-                    )}
+                  <div className="flex flex-wrap gap-2 mt-auto">
+                    {project.technologies.map((tech) => (
+                      <span key={tech} className="px-3 py-1 text-xs font-medium text-cyan-300 bg-cyan-950/30 border border-cyan-500/20 rounded-full">
+                        {tech}
+                      </span>
+                    ))}
                   </div>
                 </div>
-
-                <p className="text-muted-foreground leading-relaxed text-sm">
-                  {project.description}
-                </p>
-                
-                <div className="flex flex-wrap gap-2 pt-2">
-                  {project.technologies.map((tech) => (
-                    <span key={tech} className="px-2.5 py-0.5 text-xs font-mono text-primary/90 bg-primary/5 border border-primary/20 rounded-md group-hover:border-primary/50 transition-colors">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           ))}
         </div>
       </div>
