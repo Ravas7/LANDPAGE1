@@ -1,113 +1,63 @@
 "use client"
 
-import type React from "react"
-
-import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Mail, MapPin, Phone, Send } from "lucide-react"
+import { Mail, Send } from "lucide-react"
 
 export function ContactSection() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  })
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Handle form submission
-    console.log(formData)
-  }
-
   return (
-    <section id="contato" className="py-24 px-6">
-      <div className="container mx-auto max-w-4xl">
-        <div className="flex items-center gap-4 mb-12">
-          <span className="text-primary font-mono text-sm">05.</span>
-          <h2 className="text-3xl font-bold text-foreground">Entre em Contato</h2>
-          <div className="flex-1 h-px bg-border" />
-        </div>
+    <section id="contato" className="py-24 px-6 relative overflow-hidden">
+      {/* Luz de fundo suave */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-500/5 rounded-full blur-[100px] -z-10" />
 
-        <div className="text-center mb-12">
-          <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Estou atualmente aberto a novas oportunidades e minha caixa de entrada está sempre aberta. Se você tem uma
-            pergunta ou apenas quer dizer olá, farei o meu melhor para responder!
+      <div className="container mx-auto max-w-2xl text-center">
+        <div className="space-y-4 mb-12">
+          <h2 className="text-4xl font-bold text-white text-glow">Vamos Trabalhar Juntos?</h2>
+          <p className="text-gray-400 text-lg">
+            Tem um projeto em mente ou apenas quer trocar uma ideia? 
+            Me mande uma mensagem!
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12">
-          {/* Contact Info */}
-          <div className="space-y-8">
-            <div className="flex items-start gap-4">
-              <div className="p-3 bg-primary/10 rounded-lg text-primary">
-                <Mail size={24} />
+        <div className="neon-card p-8 backdrop-blur-md bg-[#020617]/80">
+          <form className="space-y-6 text-left">
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="space-y-2">
+                <label className="text-sm font-medium text-gray-300">Nome</label>
+                <Input 
+                  placeholder="Seu nome" 
+                  className="bg-[#0f172a] border-white/10 text-white focus:border-cyan-500 focus:ring-cyan-500/20 h-11"
+                />
               </div>
-              <div>
-                <h3 className="font-medium text-foreground mb-1">Email</h3>
-                <a href="mailto:pedroprem7@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
-                  pedroprem7@gmail.com
-                </a>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4">
-              <div className="p-3 bg-primary/10 rounded-lg text-primary">
-                <Phone size={24} />
-              </div>
-              <div>
-                <h3 className="font-medium text-foreground mb-1">Telefone</h3>
-                <a href="tel:+5571993678190" className="text-muted-foreground hover:text-primary transition-colors">
-                  +55 (71) 99367-8190
-                </a>
+              <div className="space-y-2">
+                <label className="text-sm font-medium text-gray-300">Email</label>
+                <Input 
+                  type="email" 
+                  placeholder="seu@email.com" 
+                  className="bg-[#0f172a] border-white/10 text-white focus:border-cyan-500 focus:ring-cyan-500/20 h-11"
+                />
               </div>
             </div>
-
-            <div className="flex items-start gap-4">
-              <div className="p-3 bg-primary/10 rounded-lg text-primary">
-                <MapPin size={24} />
-              </div>
-              <div>
-                <h3 className="font-medium text-foreground mb-1">Localização</h3>
-                <p className="text-muted-foreground">Salvador, BA - Brasil</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Contact Form */}
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div>
-              <Input
-                placeholder="Seu nome"
-                value={formData.name}
-                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className="bg-secondary border-border"
+            
+            <div className="space-y-2">
+              <label className="text-sm font-medium text-gray-300">Mensagem</label>
+              <Textarea 
+                placeholder="Como posso te ajudar?" 
+                className="bg-[#0f172a] border-white/10 text-white focus:border-cyan-500 focus:ring-cyan-500/20 min-h-[150px]"
               />
             </div>
-            <div>
-              <Input
-                type="email"
-                placeholder="Seu email"
-                value={formData.email}
-                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className="bg-secondary border-border"
-              />
-            </div>
-            <div>
-              <Textarea
-                placeholder="Sua mensagem"
-                rows={5}
-                value={formData.message}
-                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                className="bg-secondary border-border resize-none"
-              />
-            </div>
-            <Button type="submit" className="w-full rounded-full" size="lg">
-              <Send size={18} className="mr-2" />
+
+            <Button className="w-full neon-button h-12 text-md font-bold group">
               Enviar Mensagem
+              <Send size={18} className="ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
           </form>
+
+          <div className="mt-8 pt-8 border-t border-white/10 flex items-center justify-center gap-2 text-gray-400">
+            <Mail size={18} className="text-cyan-500" />
+            <span>predroprem7@gmail.com</span>
+          </div>
         </div>
       </div>
     </section>
