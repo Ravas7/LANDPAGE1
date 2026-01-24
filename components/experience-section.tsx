@@ -5,7 +5,7 @@ const academicHistory = [
   {
     institution: "Centro Universitário Jorge Amado (Unijorge)",
     role: "Análise e Desenvolvimento de Sistemas",
-    period: "2023 — Cursando (3º Semestre)",
+    period: "2026 — Cursando (3º Semestre)",
     url: "https://www.unijorge.edu.br/",
     description: [
       "Foco em desenvolvimento de software, lógica de programação e arquitetura de sistemas.",
