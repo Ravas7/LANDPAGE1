@@ -3,6 +3,15 @@
 import { Briefcase, GraduationCap, Code2, Users } from "lucide-react"
 
 const experiences = [
+    {
+    type: "education",
+    role: "Análise e Desenvolvimento de Sistemas",
+    company: "Unijorge",
+    period: "2026 (3º Semestre)",
+    description: "Formação focada em engenharia de software, algoritmos, estrutura de dados em C e gestão de projetos tecnológicos.",
+    skills: ["Lógica", "C", "Gestão de Projetos"],
+    icon: GraduationCap,
+  },
   {
     type: "work",
     role: "Fundador & Desenvolvedor Full Stack",
@@ -12,15 +21,7 @@ const experiences = [
     skills: ["React", "Supabase", "Pagamentos", "UX/UI"],
     icon: Code2,
   },
-  {
-    type: "education",
-    role: "Análise e Desenvolvimento de Sistemas",
-    company: "Unijorge",
-    period: "2026 (3º Semestre)",
-    description: "Formação focada em engenharia de software, algoritmos, estrutura de dados em C e gestão de projetos tecnológicos.",
-    skills: ["Lógica", "C", "Gestão de Projetos"],
-    icon: GraduationCap,
-  },
+
   {
     type: "project",
     role: "Desenvolvedor Backend (TecnoGest)",
