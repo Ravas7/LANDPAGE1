@@ -1,4 +1,7 @@
-import { Code2, Globe, Server, Database } from "lucide-react"
+"use client"
+
+import { Code2, Globe, Server, Database, Award, FileText } from "lucide-react"
+import { Button } from "@/components/ui/button"
 
 const skills = [
   {
@@ -29,7 +32,7 @@ const skills = [
 
 export function AboutSection() {
   return (
-    <section id="sobre" className="py-24 px-6 bg-black/20">
+    <section id="sobre" className="py-24 px-6 bg-black/20 relative">
       <div className="container mx-auto max-w-4xl">
         <div className="flex items-center gap-4 mb-12">
           <h2 className="text-3xl font-bold text-white text-glow">Sobre Mim</h2>
@@ -47,6 +50,21 @@ export function AboutSection() {
             <p>
               Estou sempre em busca de novos desafios e tecnologias que me permitam entregar resultados de alto impacto.
             </p>
+
+            {/* AQUI ESTÁ O BOTÃO DO CERTIFICADO */}
+            <div className="pt-4 flex flex-wrap gap-4">
+              <Button className="neon-button rounded-full pl-6 pr-8 h-12 font-bold text-white" asChild>
+                <a 
+                  href="scrum.pdf" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2"
+                >
+                  <Award size={20} className="text-yellow-400" />
+                  <span>Certificado SCRUM</span>
+                </a>
+              </Button>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 gap-4">
