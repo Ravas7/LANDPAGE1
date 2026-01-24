@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description:
     "Portfólio profissional - Desenvolvedor Full Stack especializado em criar experiências digitais incríveis",
   icons: {
-    icon: "/icon.svg", // O Next.js sabe que "/" se refere à pasta public
+    icon: "/icon.png", // O Next.js sabe que "/" se refere à pasta public
   },
 }; // <--- AQUI ESTAVA O ERRO: Troquei a vírgula por ponto e vírgula
 
